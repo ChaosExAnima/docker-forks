@@ -2,7 +2,7 @@ FROM elastic/filebeat:8.0.0
 
 USER root
 
-RUN mkdir -p /usr/share/filebeat/input.d && \
+RUN mkdir -p /usr/share/filebeat/inputs.d && \
 	mkdir -p /etc/pki/tls/certs && \
 	mkdir -p /var/lib/filebeat && \
 	chown filebeat:filebeat /var/lib/filebeat
