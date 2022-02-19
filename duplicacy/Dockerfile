@@ -1,6 +1,6 @@
 FROM azinchen/duplicacy
 
-COPY entrypoint.sh /entrypoint.sh
-COPY ../*.sh /bin
+COPY file_env.sh /bin/file_env.sh
+COPY duplicacy/entrypoint.sh /bin/entrypoint.sh
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "/bin/entrypoint.sh" ]

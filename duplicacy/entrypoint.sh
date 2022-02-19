@@ -1,7 +1,5 @@
 #! /bin/bash
 
-set +e
-
 source /bin/file_env.sh
 
 file_env "DUPLICACY_PASSWORD"

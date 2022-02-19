@@ -1,7 +1,5 @@
 #! /bin/bash
 
-set -e
-
 file_env() {
 	local var="$1"
 	local fileVar="${var}_FILE"
