@@ -1,0 +1,15 @@
+version: '3'
+services:
+    synapse-admin:
+        image: chaosexanima/synapse-admin:latest
+        build:
+            context: https://github.com/Awesome-Technologies/synapse-admin.git
+            args:
+                PUBLIC_URL: https://ishella.gay/admin
+                REACT_APP_SERVER: https://ishella.gay
+
+    duplicacy:
+        image: chaosexanima/duplicacy
+        build:
+            context: .
+            dockerfile: duplicacy/Dockerfile
