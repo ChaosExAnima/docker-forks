@@ -13,3 +13,9 @@ services:
         build:
             context: .
             dockerfile: duplicacy/Dockerfile
+
+    transgression:
+        image: chaosexanima/transgression-wordpress
+        build:
+            context: .
+            dockerfile: transgression/Dockerfile
