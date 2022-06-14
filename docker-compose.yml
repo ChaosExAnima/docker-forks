@@ -19,3 +19,9 @@ services:
         build:
             context: .
             dockerfile: transgression/Dockerfile
+
+    transgression-cli:
+        image: chaosexanima/transgression-cli
+        build:
+            context: .
+            dockerfile: transgression/CLI-Dockerfile
