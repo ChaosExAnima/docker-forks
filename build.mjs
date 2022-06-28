@@ -42,6 +42,8 @@ if ( image === 'all' ) {
 	image = '';
 }
 
+await $`docker context use default`.quiet();
+
 console.log( chalk.bold( `Building image ${ image }... 🔨` ) );
 await $`docker compose -f ${ composePath } build ${ image }`;
 
