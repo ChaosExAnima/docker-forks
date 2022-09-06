@@ -8,4 +8,4 @@ file_env "DUPLICACY_B2_KEY"
 file_env "STORAGE_URL"
 file_env "SNAPSHOT_ID"
 
-/init
+exec /init "$@"
