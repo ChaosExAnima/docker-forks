@@ -16,7 +16,7 @@ function showHelpAndExit() {
 }
 
 /** @type string */
-let [ image ] = argv._.slice( 1 );
+let [ image ] = argv._.slice( 0 );
 /** @type string[] */
 let images = [];
 const composePath = path.resolve( __dirname, 'docker-compose.yml' );
