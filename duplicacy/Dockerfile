@@ -1,4 +1,4 @@
-FROM azinchen/duplicacy
+FROM azinchen/duplicacy:latest
 
 COPY file_env.sh /bin/file_env.sh
 COPY duplicacy/entrypoint.sh /bin/entrypoint.sh
