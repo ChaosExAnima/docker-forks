@@ -5,3 +5,21 @@ services:
         build:
             context: .
             dockerfile: duplicacy/Dockerfile
+    mastodon:
+        image: chaosexanima/mastodon
+        platform: linux/amd64
+        build:
+            context: .
+            dockerfile: mastodon/Dockerfile
+    mastodon-streaming:
+        image: chaosexanima/mastodon-streaming
+        platform: linux/amd64
+        build:
+            context: .
+            dockerfile: mastodon-streaming/Dockerfile
+    fedifetcher:
+        image: chaosexanima/fedifetcher
+        platform: linux/amd64
+        build:
+            context: .
+            dockerfile: fedifetcher/Dockerfile

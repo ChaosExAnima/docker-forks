@@ -7,6 +7,14 @@ on:
 
 jobs:
   check:
+    strategy:
+      matrix:
+        images: [
+          { base: 'azinchen/duplicacy', target: 'chaosexanima/duplicacy' },
+          { base: 'ghcr.io/mastodon/mastodon:nightly', target: 'chaosexanima/mastodon' },
+          { base: 'ghcr.io/mastodon/mastodon-streaming:nightly', target: 'chaosexanima/mastodon-streaming' },
+          { base: 'ghcr.io/nanos/fedifetcher', target: 'chaosexanima/fedifetcher' },
+        ]
     runs-on: ubuntu-latest
     outputs:
       needs-updating: ${{ steps.check.outputs.needs-updating }}
@@ -21,8 +29,8 @@ jobs:
         id: check
         uses: lucacome/docker-image-update-checker@v2.0.0
         with:
-          base-image: azinchen/duplicacy:latest
-          image: chaosexanima/duplicacy:latest
+          base-image:  ${{ matrix.images.base }}
+          image:   ${{ matrix.images.target }}
 
   build:
     runs-on: ubuntu-latest
@@ -39,4 +47,4 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Build docker images
-        run: docker compose build --pull --push duplicacy
+        run: docker compose build --pull --push
